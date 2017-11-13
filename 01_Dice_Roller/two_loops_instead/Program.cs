@@ -10,20 +10,24 @@ namespace two_loops_instead
     {
         static void Main(string[] args)
         {
-            var randomNum = new Random();
-            var total = 0;
+            Console.WriteLine("> /roll 3d6 2d8");
+            Console.WriteLine();
 
+            var randomNum = new Random();
+            Dice dice = new Dice();
+
+            var total = 0;
             for (var i = 0; i < 3; i++)
             {
-                var rolled = randomNum.Next(1, 7);
-                Console.WriteLine($"1d6: {rolled}");                
-                total += rolled;
+                var roll = dice.Roll(6);
+                Console.WriteLine($"1d6: {roll}");                
+                total += roll;
             }
             for (var i = 0; i < 2; i++)
             {
-                var rolled = randomNum.Next(1, 9);
-                Console.WriteLine($"1d8:   {rolled}");
-                total += rolled;
+                var roll = dice.Roll(8);
+                Console.WriteLine($"1d8:   {roll}");
+                total += roll;
             }
             Console.WriteLine();
             Console.WriteLine($"Roll total: {total}");
