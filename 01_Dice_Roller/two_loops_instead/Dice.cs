@@ -10,11 +10,17 @@ namespace two_loops_instead
 
     public class Dice
     {
-        public int Roll(int sides)
-        {
-            var random = new Random();
+        public int Sides { get; }
+        private Random random { get; } = new Random();
 
-            return random.Next(1, sides + 1);
+        public Dice(int sides)
+        {
+            this.Sides = sides;
+        }
+
+        public int Roll()
+        {
+            return this.random.Next(1, this.Sides + 1); ;
         }
 
     }
