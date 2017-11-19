@@ -13,7 +13,7 @@ namespace two_loops_instead
             Console.WriteLine("> /roll 3d6 2d8");
             Console.WriteLine();
 
-            Dice d6 = new Dice(6, "d6");
+            Dice d6 = Dice.D6;
 
             var total = 0;
             for (var i = 0; i < 3; i++)
@@ -23,7 +23,7 @@ namespace two_loops_instead
                 total += roll;
             }
 
-            Dice d8 = new Dice(8, "d8");
+            Dice d8 = Dice.D8;
             for (var i = 0; i < 2; i++)
             {
                 var roll = d8.Roll();

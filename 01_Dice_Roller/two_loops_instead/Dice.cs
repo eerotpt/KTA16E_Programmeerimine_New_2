@@ -12,17 +12,18 @@ namespace two_loops_instead
     {
         public int Sides { get; }
         public string Description { get; }
-        private Random random { get; } = new Random();
+        private Random Random { get; } = new Random();
 
-        public Dice(int sides, string description)
+        private Dice(int sides, string description)
         {
             this.Sides = sides;
             this.Description = description;
         }
-
+        public static Dice D6 => new Dice(6, "d6");
+        public static Dice D8 => new Dice(6, "d8");
         public int Roll()
         {
-            return this.random.Next(1, this.Sides + 1); ;
+            return this.Random.Next(1, this.Sides + 1); ;
         }
 
     }
